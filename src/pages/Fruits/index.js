@@ -1,12 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-// import { Container } from './styles';
-
-import { useFruit } from '../../hooks/fruit'
+import { useSelector } from 'react-redux'
 
 const Fruits = () => {
-  const { fruits } = useFruit()
+  const fruits = useSelector(state => state.fruits)
 
   return (
     <View justifyContent="center" alignItems="center" flex={1}>

@@ -2,16 +2,17 @@ import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native'
 
-import { FruitProvider } from './src/hooks/fruit'
+import { Provider } from "react-redux";
+import store from "./src/store";
 
 import Routes from './src/routes'
 
 export default function App() {
   return (
     <NavigationContainer>
-      <FruitProvider>
+      <Provider store={store}>
         <Routes />
-      </FruitProvider>
+      </Provider>
     </NavigationContainer>
   );
 }

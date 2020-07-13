@@ -1,12 +1,16 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-// import { Container } from './styles';
+import { useDispatch } from 'react-redux'
 
-import { useFruit } from '../../hooks/fruit'
+import { Creators as FruitsActions } from '../../store/ducks/fruits'
 
 const Home = ({ navigation }) => {
-  const { addFruit } = useFruit()
+  const dispatch = useDispatch()
+
+  const addFruit = () => {
+    dispatch(FruitsActions.addFruit())
+  }
 
   return (
     <View justifyContent="center" alignItems="center" flex={1}>
